@@ -11,7 +11,7 @@ namespace Consumer
                 .WriteTo.Console()
                 .CreateLogger();
             
-            logger.Information("Testando o consumo de mensagens com Kafka");
+            logger.Information("Testing message consumption with Kafka");
 
             if (args.Length != 2)
             {
