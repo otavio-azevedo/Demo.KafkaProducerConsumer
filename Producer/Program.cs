@@ -25,10 +25,10 @@ namespace Producer
             }
 
             string bootstrapServers = args[0];
-            string nomeTopic = args[1];
+            string topicName = args[1];
 
             logger.Information($"BootstrapServers = {bootstrapServers}");
-            logger.Information($"Topic = {nomeTopic}");
+            logger.Information($"Topic = {topicName}");
 
             try
             {
@@ -42,7 +42,7 @@ namespace Producer
                     for (int i = 2; i < args.Length; i++)
                     {
                         var result = await producer.ProduceAsync(
-                            nomeTopic,
+                            topicName,
                             new Message<Null, string>
                             { Value = args[i] });
 
